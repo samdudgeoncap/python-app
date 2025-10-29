@@ -1,10 +1,11 @@
 apiVersion: backstage.io/v1alpha1
-kind: User
+kind: Component
 metadata:
-  name: samdudgeoncap
+  name: python-app
+  description: Python app that displays time.
+  annotations:
+     github.com/project-slug: samdudgeoncap/python-app
 spec:
-  profile:
-    email: sam.dudgeon@capgemini.com
-    picture: https://api.dicebear.com/7.x/avataaars/svg?seed=Luna&backgroundColor=transparent
-  memberOf:
-    - development
+  type: service
+  owner: development
+  lifecycle: experimental
