@@ -1,0 +1,24 @@
+app:
+  listen:
+    host: 0.0.0.0
+
+auth:
+  environment: development
+  providers:
+    github:
+      development:
+        clientId: ${AUTH_GITHUB_CLIENT_ID}
+        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+        signIn:
+          resolvers:
+            - resolver: usernameMatchingUserEntityName
+
+catalog:
+  rules:
+    - allow: [User, Group, Component, System, API, Resource, Location]
+  locations:
+    - type: file
+      target: /app/backstagev3/catalog/entities/users.yaml
+
+    - type: file
+      target: /app/backstagev3/catalog/entities/groups.yaml
