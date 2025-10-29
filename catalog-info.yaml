@@ -1,4 +1,15 @@
 apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: samdudgeoncap
+spec:
+  profile:
+    email: sam.dudgeon@capgemini.com
+    picture: https://api.dicebear.com/7.x/avataaars/svg?seed=Luna&backgroundColor=transparent
+  memberOf:
+    - development
+---
+apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: development
@@ -6,7 +17,15 @@ spec:
   type: team
   profile:
     displayName: Development Team
-    picture: https://api.dicebear.com/7.x/identicon/svg?seed=DevTeam
   parent: default-org
   members:
     - samdudgeoncap
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: default-org
+spec:
+  type: organization
+  profile:
+    displayName: Capgemini
